@@ -6,6 +6,7 @@ module FastlyRails
     def set_surrogate_key_header(*surrogate_keys)
       request.session_options[:skip] = true  # No Set-Cookie
       response.headers['Surrogate-Key'] = surrogate_keys.join(' ')
+      response.headers['xkey'] = surrogate_keys.join(' ')
     end
   end
 end

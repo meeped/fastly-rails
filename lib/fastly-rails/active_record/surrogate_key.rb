@@ -26,7 +26,7 @@ module FastlyRails
       end
 
       def record_key
-        "#{table_key}/#{id}"
+        "#{table_key}/#{encoded_id}"
       end
 
       def table_key

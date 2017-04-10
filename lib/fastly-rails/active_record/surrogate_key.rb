@@ -34,7 +34,8 @@ module FastlyRails
       end
 
       def purge
-        FastlyRails.purge_by_key(record_key)
+        #FastlyRails.purge_by_key(record_key)
+        CachePurge.perform_later(record_key)
       end
 
       def soft_purge
